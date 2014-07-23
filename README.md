@@ -1,7 +1,6 @@
 Colorbox Widget for Yii2
 ========================
-
-A customizable lightbox jQuery plugin for Yii2.
+A customizable lightbox jQuery plugin for Yii2 based on [Colorbox](http://www.jacklmoore.com/colorbox/).
 
 Installation
 ------------
@@ -12,6 +11,7 @@ Either run
 ```
 php composer.phar require "himiklab/yii2-colorbox-widget" "*"
 ```
+
 or add
 
 ```json

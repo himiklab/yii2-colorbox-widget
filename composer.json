@@ -1,22 +1,25 @@
 {
 	"name": "himiklab/yii2-colorbox-widget",
-	"description": "Colorbox widget for Yii2",
+	"description": "Customizable lightbox widget for Yii2",
 	"keywords": ["yii2", "colorbox", "widget", "lightbox"],
 	"type": "yii2-extension",
 	"license": "MIT",
 	"support": {
-		"source": "https://github.com/himiklab/yii2-colorbox-widget"
+		"source": "https://github.com/himiklab/yii2-colorbox-widget",
+        "issues" : "https://github.com/himiklab/yii2-colorbox-widget/issues"
 	},
 	"authors": [
 		{
 			"name": "HimikLab",
-			"email": "himiklab@yandex.ru"
+            "homepage" : "https://github.com/himiklab/"
 		}
 	],
 	"require": {
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-4": { "himiklab\\colorbox\\": "" }
+		"psr-4": {
+            "himiklab\\colorbox\\": ""
+        }
 	}
 }
