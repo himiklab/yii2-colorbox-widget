@@ -12,11 +12,7 @@ use yii\web\AssetBundle;
 
 class ColorboxAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/himiklab/yii2-colorbox-widget/assets';
-
-    public $css = [
-        'css/colorbox.css',
-    ];
+    public $sourcePath = '@bower/jquery-colorbox';
 
     public $depends = [
         'yii\web\JqueryAsset',
@@ -27,9 +23,9 @@ class ColorboxAsset extends AssetBundle
         parent::init();
         $jsLangSuffix = $this->getLanguageSuffix();
 
-        $this->js[] = YII_DEBUG ? 'js/jquery.colorbox.js' : 'js/jquery.colorbox-min.js';
+        $this->js[] = YII_DEBUG ? 'jquery.colorbox.js' : 'jquery.colorbox-min.js';
         if ($jsLangSuffix !== 'en') {
-            $this->js[] = "js/i18n/jquery.colorbox-{$jsLangSuffix}.js";
+            $this->js[] = "i18n/jquery.colorbox-{$jsLangSuffix}.js";
         }
     }
 

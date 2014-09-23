@@ -15,8 +15,9 @@
 		}
 	],
 	"require": {
-		"yiisoft/yii2": "*"
-	},
+		"yiisoft/yii2": "*",
+        "bower-asset/jquery-colorbox": "1.5.*"
+    },
 	"autoload": {
 		"psr-4": {
             "himiklab\\colorbox\\": ""
