@@ -33,6 +33,7 @@ use himiklab\colorbox\Colorbox;
             'maxWidth' => 800,
             'maxHeight' => 600,
         ],
-    ]
+    ],
+    'coreStyle' => 2
 ]) ?>
 ```

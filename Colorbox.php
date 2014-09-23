@@ -22,7 +22,8 @@ use yii\base\Widget;
  *              'maxWidth' => 800,
  *              'maxHeight' => 600,
  *          ],
- *      ]
+ *      ],
+ *      'coreStyle' => 2
  * ]);
  * ```
  *
@@ -32,7 +33,14 @@ use yii\base\Widget;
  */
 class Colorbox extends Widget
 {
+    /** @var array $targets */
     public $targets = [];
+
+    /**
+     * @var integer|boolean $coreStyle A number from 1 to 5 connects style from the appropriate `example` folders.
+     * Set it to `false`, if you don't need to connect the built-in styles.
+     */
+    public $coreStyle = 1;
 
     public function init()
     {
@@ -47,6 +55,11 @@ class Colorbox extends Widget
             }
             $view->registerJs($script);
         }
+
+        if ($this->coreStyle !== false) {
+            ColorboxAsset::$coreCssFile ="example{$this->coreStyle}/colorbox.css";
+        }
+
         ColorboxAsset::register($view);
     }
 }
