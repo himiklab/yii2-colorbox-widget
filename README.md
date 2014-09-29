@@ -22,7 +22,7 @@ to the require section of your application's `composer.json` file.
 
 Usage
 -----
-Using as field in ActiveForm:
+* In view:
 
 ```php
 use himiklab\colorbox\Colorbox;
