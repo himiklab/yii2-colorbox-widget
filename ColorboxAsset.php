@@ -12,8 +12,6 @@ use yii\web\AssetBundle;
 
 class ColorboxAsset extends AssetBundle
 {
-    public static $coreCssFile;
-
     public $sourcePath = '@bower/jquery-colorbox';
 
     public $depends = [
@@ -23,31 +21,20 @@ class ColorboxAsset extends AssetBundle
     public function init()
     {
         parent::init();
-        $jsLangSuffix = $this->getLanguageSuffix();
 
         $this->js[] = YII_DEBUG ? 'jquery.colorbox.js' : 'jquery.colorbox-min.js';
-        if ($jsLangSuffix !== 'en') {
-            $this->js[] = "i18n/jquery.colorbox-{$jsLangSuffix}.js";
-        }
-
-        if (self::$coreCssFile) {
-            $this->css = [self::$coreCssFile];
-        }
+        $this->registerLanguageAsset();
     }
 
-    protected function getLanguageSuffix()
+    protected function registerLanguageAsset()
     {
-        $currentAppLanguage = Yii::$app->language;
-        $langsExceptions = ['pt-BR', 'zn-CN', 'zh-TW'];
-
-        if (strpos($currentAppLanguage, '-') === false) {
-            return $currentAppLanguage;
+        $language = Yii::$app->language;
+        if (!file_exists(Yii::getAlias($this->sourcePath . "/i18n/jquery.colorbox-{$language}.js"))) {
+            $language = substr($language, 0, 2);
+            if (!file_exists(Yii::getAlias($this->sourcePath . "/i18n/jquery.colorbox-{$language}.js"))) {
+                return;
+            }
         }
-
-        if (in_array($currentAppLanguage, $langsExceptions)) {
-            return $currentAppLanguage;
-        } else {
-            return substr($currentAppLanguage, 0, strpos($currentAppLanguage, '-'));
-        }
+        $this->js[] = "i18n/jquery.colorbox-{$language}.js";
     }
 }

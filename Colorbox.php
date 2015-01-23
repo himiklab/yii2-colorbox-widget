@@ -7,8 +7,8 @@
 
 namespace himiklab\colorbox;
 
-use yii\helpers\Json;
 use yii\base\Widget;
+use yii\helpers\Json;
 
 /**
  * Widget renders an Colorbox lightbox jQuery widget.
@@ -56,10 +56,9 @@ class Colorbox extends Widget
             $view->registerJs($script);
         }
 
+        $bundle = ColorboxAsset::register($view);
         if ($this->coreStyle !== false) {
-            ColorboxAsset::$coreCssFile ="example{$this->coreStyle}/colorbox.css";
+            $view->registerCssFile("{$bundle->baseUrl}/example{$this->coreStyle}/colorbox.css");
         }
-
-        ColorboxAsset::register($view);
     }
 }
