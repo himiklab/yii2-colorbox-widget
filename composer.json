@@ -16,7 +16,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/jquery-colorbox": "1.5.*"
+        "bower-asset/jquery-colorbox": "*"
     },
     "autoload": {
         "psr-4": {
