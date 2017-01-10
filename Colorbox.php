@@ -51,6 +51,7 @@ class Colorbox extends Widget
             $script = '';
             foreach ($this->targets as $selector => $options) {
                 $options = Json::encode($options);
+                $options=preg_replace('#(\]|\[)#','',$options);
                 $script .= "$('$selector').colorbox($options);" . PHP_EOL;
             }
             $view->registerJs($script);
