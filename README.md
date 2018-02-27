@@ -2,6 +2,8 @@ Colorbox Widget for Yii2
 ========================
 A customizable lightbox jQuery plugin for Yii2 based on [Colorbox](http://www.jacklmoore.com/colorbox/).
 
+[![Packagist](https://img.shields.io/packagist/dt/himiklab/yii2-colorbox-widget.svg)]() [![Packagist](https://img.shields.io/packagist/v/himiklab/yii2-colorbox-widget.svg)]()  [![license](https://img.shields.io/badge/License-MIT-yellow.svg)]()
+
 Installation
 ------------
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
