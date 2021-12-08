@@ -22,7 +22,7 @@ class ColorboxAsset extends AssetBundle
     {
         parent::init();
 
-        $this->js[] = YII_DEBUG ? 'jquery.colorbox.js' : 'jquery.colorbox-min.js';
+        $this->js[] = 'jquery.colorbox.js';
         $this->registerLanguageAsset();
     }
 
